@@ -1,4 +1,2 @@
-DROP DATABASE IF EXISTS ;
-CREATE DATABASE ;
-
--- ex crowdfund_db
+DROP DATABASE IF EXISTS blog_db;
+CREATE DATABASE blog_db;
