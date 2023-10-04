@@ -27,14 +27,21 @@ User.init(
     },
     {
         hooks: {
-            // add hooks to bcrypt the password
-        }
-    },
-    {
+          beforeCreate: async (newUserData) => {
+            newUserData.password = await bcrypt.hash(newUserData.password, 10);
+            return newUserData;
+          },
+          beforeUpdate: async (updatedUserData) => {
+            updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+            return updatedUserData;
+          },
+        },
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'users',
-    })
-
-module.exports = User;
+        modelName: 'user',
+      }
+    );
+    
+    module.exports = User;
