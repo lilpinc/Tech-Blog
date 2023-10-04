@@ -5,7 +5,7 @@
         post_id: 1
     },
     {
-        comment_text: "Looks difficult..",
+        comment_text: "Best one..",
         user_id: 2,
         post_id: 3,
         
@@ -29,7 +29,7 @@
         
     },
     {
-        comment_text: "Not sure about this one.",
+        comment_text: "Love it.",
         user_id: 3,
         post_id: 4,
         
@@ -47,7 +47,7 @@
         
     },
     {
-        comment_text: "Seems legit. I am going to try it",
+        comment_text: "I will try to remember this.",
         user_id: 2,
         post_id: 1,
         
