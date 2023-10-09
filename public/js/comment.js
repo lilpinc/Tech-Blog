@@ -3,8 +3,6 @@ const commentFormHandler = async (event) => {
 
     const comment = document.querySelector('input[name="comment-body"]').value.trim();
    
-   
-    console.log(comment);
 
     const post_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
@@ -33,5 +31,5 @@ const commentFormHandler = async (event) => {
 }
 
 document
-.querySelector('.comment-form')
+.querySelector('#comment-form')
 .addEventListener('submit', commentFormHandler);
