@@ -7,7 +7,6 @@ Tech Blog - Challenge 14
 ## Table of Contents
 
   * [Description](#description)
-  * [Motivation](#motivation)
   * [Installation](#installation)
   * [Usage](#usage)
   * [Screenshots](#screenshots)
@@ -17,21 +16,19 @@ Tech Blog - Challenge 14
   
 ### Description
 
-
-
-## Motivation
-
+This app allows the user to view, create, update, and delete posts. It also allows users to comment on other developers posts. The app follows the MVC structure, using Handlebars.js as the templating language, Sequelize, and express-session for authentication.
 
 
 ### Installation
 
 1. Clone the application: https://github.com/lilpinc/Tech-Blog 
 2. type in "npm i" into integrated terminal 
+3. type "npm run seed"
 4. npm start or node server.js to run the server where you can find the page on localhost:3001
 
 ### Usage
 
-
+Use this app to post your own blog and comment on others!
 
 ### Screenshots
 
