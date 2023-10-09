@@ -1,11 +1,10 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
-const { Post, User, Comment } = require('../models');
-const withAuth = require('../utils/auth');
+const { Post, User, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 
-router.post('/',async (req, res) => {
-    // create a new category
+router.post('/',withAuth, async (req, res) => {
+    // create a new post
     try {
       const postData = await Post.create({
         title: req.body.title,
@@ -13,7 +12,7 @@ router.post('/',async (req, res) => {
         user_id: req.session.user_id
         });
 
-      res.status(200).json(categoryData);
+      res.status(200).json(postData);
     } catch (err) {
       res.status(400).json(err);
     }
@@ -21,7 +20,7 @@ router.post('/',async (req, res) => {
   });
   
 
-  router.put('/update/:id', withAuth, async (req, res) => {
+  router.put('/:id', withAuth, async (req, res) => {
     try {
     const postData = await Post.update({
             title: req.body.title,
@@ -34,14 +33,7 @@ router.post('/',async (req, res) => {
         const posts = postData.map((post) => 
         post.get({plain: true})
   );
-        if (!postData) {
-            res.status(404).json({ message: 'No post found with this id' });
-                return;
-        }
-        res.render ('posts', {
-            posts,
-            loggedIn: req.session.loggedIn 
-        })
+       
         res.status(200).json(productData);
     } catch (error) {
         console.log(err);

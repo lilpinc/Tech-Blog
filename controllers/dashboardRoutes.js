@@ -4,7 +4,7 @@ const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/user/:id', withAuth, async (req, res) => {
     // find all posts with user id match
     try {
       const postData = await Post.findAll({
@@ -35,4 +35,4 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
- 
+ module.exports = router;

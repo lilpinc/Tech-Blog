@@ -31,23 +31,22 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get("/login", (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect("/");
-      return;
+router.get("/login", async (req, res) => {
+    try {
+    res.render('login');
+    } catch (err) {
+        res.status(500).json(err);
     }
-  
-    res.render("login");
   });
   
   router.get("/signup", (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect("/");
-      return;
-    }
-  
-    res.render("signup");
-  });
+    try {
+        res.render('signup');
+        } catch (err) {
+            res.status(500).json(err);
+        }
+      });
+      
 
 
 router.get('/post/:id', withAuth, async (req, res) => {
@@ -56,7 +55,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
         include:[
             {model: User}, {model: Comment}
         ]
-        })
+        });
         const posts = postData.map((post) => 
         post.get({plain: true})
 );
@@ -70,3 +69,6 @@ router.get('/post/:id', withAuth, async (req, res) => {
         res.status(500).json(error);
     }
 });
+
+
+module.exports = router;
