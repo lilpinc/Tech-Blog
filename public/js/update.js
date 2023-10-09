@@ -33,4 +33,4 @@ const updateFormHandler = async (event) => {
 
 document
 .querySelector('.edit-post-form')
-.addEventListener('submit', editFormHandler);
+.addEventListener('submit', updateFormHandler);
