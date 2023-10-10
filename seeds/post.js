@@ -1,4 +1,7 @@
-[
+
+const { Post } = require('../models/Post');
+
+const postData = [
     {
         title: "Strength & Wisdom",
         content: "His grief he will not forget, but it will not darken his heart, it will teach him wisdom",
@@ -30,3 +33,7 @@
         user_id: 3
     },
 ]
+
+const posts = () => Post.bulkCreate(postData);
+
+module.exports = posts;

@@ -1,3 +1,6 @@
+const { Comment } = require('../models/Comment');
+
+const commentData =
 [
     {
         comment_text: "This is so cool!",
@@ -53,3 +56,6 @@
         
     }
 ]
+const comments = () => Comment.bulkCreate(commentData);
+
+module.exports = comments;
