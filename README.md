@@ -28,7 +28,7 @@ This app allows the user to view, create, update, and delete posts. It also allo
 
 ### Usage
 
-Use this app to post your own blog and comment on others!
+Use this app to post your own coding blog and comment on others!
 
 ### Screenshots
 
@@ -37,7 +37,7 @@ Use this app to post your own blog and comment on others!
 
 GitHub link to profile: https://github.com/lilpinc/
 
-Heroku link to app: 
+Heroku link to app: https://dashboard.heroku.com/apps/obscure-journey-01519
 
 Email: lilpinc@gmaill.com
  
